@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"type": "node",
+				"request": "attach",
+				"name": "Debug: API",
+				"remoteRoot": "./parse/",
+				"localRoot": "${workspaceFolder}/api",
+				"port": 9229,
+				"restart": true,
+				"sourceMaps": true,
+				"resolveSourceMapLocations": ["${workspaceFolder}/api/dist/**", "!**/node_modules/**"]
+			}
+		]
+	}
+}

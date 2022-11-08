@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+  dr-h-co-ascend-streamapi:
+    build: ../ascend-streamapi/
+    container_name: drhco-ascend-streamapi
+    environment:
+      ASCEND_CLIENT_ID: "${ASCEND_CLIENT_ID}"
+      ASCEND_CLIENT_SECRET: "${ASCEND_CLIENT_SECRET}"
+      NATS: "${NATS}"
+    networks:
+      - nats
+      - dr-h-co-api-server
+      - dr-h-co-ascend-streamapi
+    restart: unless-stopped
+
+networks:
+  dr-h-co-ascend-streamapi:
+    driver: bridge

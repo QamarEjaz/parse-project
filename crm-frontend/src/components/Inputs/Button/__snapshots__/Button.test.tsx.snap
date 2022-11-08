@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button> Component expect to render Button component with props 1`] = `
+<button
+  className="btn  btn-contained btn-gray-dark undefined"
+  id="button"
+  type="button"
+>
+  <div
+    className="undefined"
+    id="button-text"
+  >
+    Click me!
+  </div>
+</button>
+`;
+
+exports[`<Button> Component expect to render Button component without props 1`] = `
+<button
+  className="btn  btn-contained undefined undefined"
+  id="button"
+  type="button"
+>
+  <div
+    className="undefined"
+    id="button-text"
+  />
+</button>
+`;

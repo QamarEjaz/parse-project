@@ -1,0 +1,283 @@
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/*** Toast Overrides ***/
+.Toastify__toast-container {
+  width: auto !important;
+}
+
+.Toastify__toast--success {
+  background-color: #5faa46 !important;
+  color: #fff !important;
+}
+
+.Toastify__toast--error {
+  background-color: #ff7675 !important;
+  color: #fff !important;
+}
+
+.marker {
+  border: none;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  background-image: url(/src/assets/images/location-pin.png);
+  background-position: center;
+  background-size: cover;
+}
+
+/* Loader */
+.loaderTHDC {
+  border-top-color: #5faa46;
+  -webkit-animation: spinner 1.5s linear infinite;
+  animation: spinner 1.5s linear infinite;
+}
+
+.loaderDrHCo {
+  border-top-color: #000;
+  -webkit-animation: spinner 1.5s linear infinite;
+  animation: spinner 1.5s linear infinite;
+}
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.sq-input {
+  /* height: 36px */
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #e0e2e3;
+  background-color: white;
+  /* border-radius: 6px; */
+  display: inline-block;
+  margin-bottom: 10px;
+  -webkit-transition: border-color 0.2s ease-in-out;
+  -moz-transition: border-color 0.2s ease-in-out;
+  -ms-transition: border-color 0.2s ease-in-out;
+  transition: border-color 0.2s ease-in-out;
+}
+
+/* react nice dates */
+.nice-dates-day.-outside {
+  /* visibility: hidden !important; */
+}
+
+.nice-dates-day.-highlight {
+  color: #ddd;
+}
+
+.react-select__control {
+  border-radius: 50px !important;
+  padding: 0 6px !important;
+  border-width: 2px !important;
+}
+.react-select__control input{
+  box-shadow: none !important;
+}
+.react-selectDetail__control input{
+  box-shadow: none !important;
+}
+.react-selectDetail__control {
+  border-radius: 0px !important;
+}
+.react-date-picker {
+  height: 52px;
+}
+.react-date-picker input:focus{
+  box-shadow: none !important;
+}
+abbr[title]{
+  text-decoration: none !important;
+  font-size: 14px;
+}
+.react-calendar button {
+  font-size: 16px;
+}
+
+.nice-dates-popover {
+  max-width: 320px;
+  max-height: 320px;
+}
+.react-date-picker .react-date-picker__wrapper {
+  border: none;
+}
+.react-date-picker .react-date-picker__wrapper input {
+  background: transparent;
+}
+
+.page-title {
+  @apply w-full px-4 py-3 sm:py-1.5 md:top-0 md:relative md:px-0 md:py-4 text-lg md:text-3xl lg:py-8 lg:text-6xl;
+}
+
+.tabFocus:focus-visible {
+  outline: none;
+}
+
+body > iframe {
+  visibility: hidden !important;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.css-1pahdxg-control{
+  background-color: #f3f4f6;
+  border: none;
+}
+div.css-1s2u09g-control{
+  background-color: #f3f4f6;
+  border: none;
+  border-width: 0px;
+}
+div.css-qc6sy-singleValue{
+  color:#707070 ;
+}
+div.react-select__contro{
+  border: none;
+}
+div.css-1pahdxg-control:hover{
+  border-color: #f3f4f6;
+}
+/* Style Default Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  margin-left: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(236, 236, 233);
+  border-radius: 5px;
+}
+
+/* Spinner CSS */
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  transform: translateX(2px);
+  -webkit-transform: translateX(2px);
+  -moz-transform: translateX(2px);
+  -ms-transform: translateX(2px);
+  -o-transform: translateX(2px);
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.dark .lds-ellipsis div {
+  background-color: #fff;
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
+.spinner-wrapper {
+  transform: scale(0.6);
+  height: calc(1em + 6px);
+  display: flex;
+  align-items: center;
+}
+
+.widget-visible {
+  display: block;
+}
+
+.locationTextFont {
+  font-size: 34px !important;
+}
+
+@media only screen and (max-width: 767px) {
+  .widget-visible {
+    display: none !important;
+  }
+  .locationTextFont {
+    font-size: 24px !important;
+    font-weight: 500 !important;
+  }
+  .page-title {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

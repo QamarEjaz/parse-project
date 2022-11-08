@@ -1,0 +1,101 @@
+{
+  "name": "dr-h-co-api-server",
+  "version": "1.0.0",
+  "description": "dr-h-co-api-server as docker container",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Dr-H-Co/crm_backend.git"
+  },
+  "bin": {
+    "thdc": "./bootstrap/cli.js"
+  },
+  "scripts": {
+    "build": "tsc --build",
+    "dev": "env-cmd -e development nodemon --inspect=0.0.0.0:9229 src/index.ts",
+    "dev:local": "env-cmd -e development nodemon --inspect=0.0.0.0:9229 --watch \"src/**\" --watch \"../core/**\" --ext \"ts,json\" --ignore \"src/**/*.spec.ts\" --exec \"npm run start\"",
+    "start": "ts-node src/index.ts"
+  },
+  "engines": {
+    "node": ">=4.3",
+    "npm": ">=8.3.0"
+  },
+  "dependencies": {
+    "@parse/s3-files-adapter": "^1.6.2",
+    "@sendgrid/mail": "^7.7.0",
+    "@types/mailgun-js": "^0.22.12",
+    "agora-access-token": "^2.0.4",
+    "aws-sdk": "*",
+    "axios": "^0.27.2",
+    "chalk": "^4.1.2",
+    "check-ip": "^1.1.1",
+    "commander": "^9.4.0",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.0.1",
+    "env-cmd": "^10.1.0",
+    "express": "^4.18.1",
+    "form-data": "^4.0.0",
+    "kerberos": "^2.0.0",
+    "mailgun.js": "^7.0.4",
+    "moment": "^2.29.4",
+    "moment-timezone": "^0.5.37",
+    "mongodb": "^4.6.0",
+    "mysql2": "^2.3.3",
+    "nanospinner": "^1.1.0",
+    "nats": "^2.7.1",
+    "nodemailer": "^6.7.8",
+    "nodemailer-mailgun-transport": "^2.1.4",
+    "nodemon": "^2.0.16",
+    "otp-generator": "^4.0.0",
+    "otp-without-db": "^1.0.4",
+    "otplib": "^12.0.1",
+    "parse": "^3.5.0-alpha.4",
+    "parse-server": "^5.2.4",
+    "parse-smtp-template": "^2.2.0",
+    "pg": "^8.7.3",
+    "qs": "^6.11.0",
+    "react": "*",
+    "short-unique-id": "^4.4.4",
+    "square": "^21.1.0",
+    "ssh2": "^1.11.0",
+    "stripe": "^9.6.0",
+    "twilio": "^3.82.2",
+    "typedi": "^0.10.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/node": "^18.0.3",
+    "@types/otp-generator": "^4.0.0",
+    "@types/parse": "^2.18.18",
+    "@types/pg": "^8.6.5",
+    "@types/ssh2": "^1.11.5",
+    "concurrently": "^7.2.2",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.1.0",
+    "typescript": "^4.7.4"
+  },
+  "overrides": {
+    "parse-server": {
+      "parse": "^3.5.0-alpha.4"
+    }
+  },
+  "nodemonConfig": {
+    "watch": [
+      "src/**",
+      "../core/src/**",
+      "lib1.ts"
+    ],
+    "ext": "ts,json",
+    "ignore": [
+      ".git",
+      "node_modules/**/node_modules",
+      "src/**/*.spec.ts"
+    ],
+    "execMap": {
+      "ts": "node --require ts-node/register -r tsconfig-paths/register"
+    }
+  }
+}

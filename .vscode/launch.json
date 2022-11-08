@@ -1,0 +1,33 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "api",
+            "type": "node",
+            "request": "attach",
+            "restart": true,
+            "port": 9229,
+            "localRoot": "${workspaceFolder}/api",
+            "remoteRoot": "/api"
+        },
+        {
+            "name": "consumers",
+            "type": "node",
+            "request": "attach",
+            "restart": true,
+            "port": 9339,
+            "address": "localhost",
+            "localRoot": "${workspaceFolder}/ascend-consumer",
+            "remoteRoot": "/ascend-consumer",
+        },
+        {
+            "name": "core",
+            "type": "node",
+            "request": "attach",
+            "restart": true,
+            "port": 9449,
+            "address": "localhost",
+            "localRoot": "${workspaceFolder}/core",
+        }
+    ]
+}

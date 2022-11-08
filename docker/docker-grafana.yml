@@ -1,0 +1,21 @@
+version: "3.7"
+
+services:
+  dr-h-co-grafana:
+    image: grafana/grafana
+    container_name: dr-h-co-grafana
+    ports:
+      - 3300:3000
+    networks:
+      - dr-h-co-grafana
+      - dr-h-co-postgres
+    # env_file:
+    #   - ./grafana/config.monitoring
+    volumes:
+      - ./grafana/dashboard:/etc/extra-config/grafana
+    # command: ./etc/extra-config/grafana/post.sh
+    restart: unless-stopped
+
+networks:
+  dr-h-co-grafana:
+    driver: bridge

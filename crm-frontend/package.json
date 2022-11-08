@@ -1,0 +1,120 @@
+{
+  "name": "crm",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build:css": "postcss src/assets/css/tailwind.css -o src/assets/css/main.css",
+    "watch:css": "postcss src/assets/css/tailwind.css -o src/assets/css/main.css",
+    "start": "npm run watch:css & (cd ../core && npm i && npm run build) && env-cmd react-scripts start",
+    "build": "npm run build:css & (cd ../core && npm i && npm run build) && env-cmd react-scripts build",
+    "build:ci": "CI=true npm run build",
+    "test": "react-scripts test",
+    "test:ci": "CI=true npm test",
+    "lint": "eslint 'src/**/*.tsx' 'src/**/*.ts'",
+    "lint-fix": "eslint \"./src/**\" --fix",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.6.6",
+    "@heroicons/react": "^1.0.6",
+    "@syncfusion/ej2-base": "^20.2.43",
+    "@syncfusion/ej2-react-schedule": "^20.2.43",
+    "@tanstack/react-query": "^4.10.3",
+    "@tanstack/react-query-devtools": "^4.11.0",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^13.0.0",
+    "@testing-library/user-event": "^13.2.1",
+    "@types/jest": "^28.1.7",
+    "@types/node": "^18.7.6",
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "@types/shortid": "^0.0.29",
+    "agora-access-token": "^2.0.4",
+    "agora-rtc-sdk-ng": "^4.13.0",
+    "body-parser": "^1.20.0",
+    "classnames": "^2.3.1",
+    "connected-react-router": "^6.9.1",
+    "crm-core": "file:../core",
+    "date-fns": "^2.29.1",
+    "env-cmd": "^10.1.0",
+    "formik": "^2.2.9",
+    "history": "^4.10.1",
+    "moment": "^2.29.4",
+    "moment-timezone": "^0.5.34",
+    "parse": "^3.4.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.34.2",
+    "react-icons": "^4.4.0",
+    "react-infinite-scroll-component": "^6.1.0",
+    "react-nice-dates": "^3.1.0",
+    "react-redux": "^7.2.8",
+    "react-router": "^6.3.0",
+    "react-router-dom": "^6.3.0",
+    "react-router-redux": "^4.0.8",
+    "react-scripts": "5.0.1",
+    "react-select": "^5.4.0",
+    "react-table": "^7.8.0",
+    "react-toastify": "^8.2.0",
+    "react-top-loading-bar": "^2.3.1",
+    "react-wifi-indicator": "^1.0.1",
+    "redux-persist": "^6.0.0",
+    "redux-saga": "^1.1.3",
+    "redux-thunk": "^2.4.1",
+    "reselect": "^4.1.4",
+    "shortid": "^2.2.16",
+    "styled-components": "^5.3.5",
+    "typescript": "^4.7.4",
+    "use-local-storage": "^2.3.6",
+    "web-vitals": "^2.1.0",
+    "yup": "^0.32.9"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/enzyme": "^3.10.12",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/parse": "^2.18.16",
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "@types/react-redux": "^7.1.18",
+    "@types/react-router-dom": "^5.1.8",
+    "@types/react-router-redux": "^5.0.19",
+    "@types/react-table": "^7.7.12",
+    "@types/shortid": "^0.0.29",
+    "@types/styled-components": "^5.1.26",
+    "@typescript-eslint/eslint-plugin": "^5.35.1",
+    "@typescript-eslint/parser": "^5.35.1",
+    "autoprefixer": "^10.4.11",
+    "babel-plugin-macros": "^3.1.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "enzyme-to-json": "^3.6.2",
+    "eslint": "^8.0.0",
+    "eslint-plugin-tailwindcss": "^3.6.0",
+    "postcss-cli": "^10.0.0",
+    "tailwindcss": "^3.1.8",
+    "twin.macro": "^2.8.2"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+version: "3.7"
+
+services:
+  dr-h-co-ascend-consumer:
+    build: ../ascend-consumer/
+    container_name: drhco-ascend-consumer
+    environment:
+      APP_ID: "${APP_ID}"
+      MASTER_KEY: "${MASTER_KEY}"
+      PARSE_SERVER_URL: "${PARSE_SERVER_URL}"
+      NATS: "${NATS}"
+      POSTGRES_USER: "${POSTGRES_USER}"
+      DATABASE_HOST: "${DATABASE_HOST}"
+      DATABASE_NAME: "${DATABASE_NAME}"
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+      DATABASE_PORT: "${DATABASE_PORT}"
+    ports:
+      - "9339:9339"
+    networks:
+      - nats
+      - dr-h-co-api-server
+      - dr-h-co-ascend-consumer
+      - dr-h-co-mongo
+      - dr-h-co-postgres
+    restart: unless-stopped
+
+networks:
+  dr-h-co-ascend-consumer:
+    driver: bridge

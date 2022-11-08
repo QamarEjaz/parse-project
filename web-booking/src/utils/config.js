@@ -1,0 +1,76 @@
+// Total Health Dental Care
+const thdc = {
+  mainUrl: "https://totalhealthdentalcare.com",
+  appUrl: "https://schedule.totalhealthdentalcare.com",
+  apiUrl: "https://api.totalhealthdentalcare.com",
+  title: "Schedule | Total Health Dental Care",
+  favicon: "faviconTHDC.ico",
+  namePrefix: "Total Health Dental Care",
+  insuranceBrand: "THDC",
+  headerIconSrc: "../../assets/imgs/image0.png",
+  rightImageSrc: "../../assets/imgs/girl.png",
+  backgroundColor: "bg-mobile-green-50",
+  borderColor: "border-mobile-green-50",
+  textColor: "text-mobile-green-50",
+  reserveTextColor: "text-white",
+  focusRingColor: "focus:ring-mobile-green-50",
+  loader: "loaderTHDC",
+  welcomeCenter: "Berkeley Welcome Center",
+  welcomeCenters: [
+    "Berkeley Welcome Center",
+    "Martinez",
+    "San Ramon",
+    "Marina",
+    "Dana",
+    "Hyde Street",
+  ],
+  skipHomeOffices: [
+    "Berkeley Welcome Center",
+    "THDC - Remote",
+    "Telehealth",
+    "Rotunda",
+  ],
+  brandColor: "#5FAA46",
+};
+
+// Dr. H. & Co.
+const drhco = {
+  mainUrl: "https://hellodrh.com",
+  appUrl: "https://schedule.hellodrh.com",
+  apiUrl: "https://api.hellodrh.com",
+  title: "Schedule | Dr. H. & CO.",
+  favicon: "faviconDrHCo.ico",
+  namePrefix: "Dr. H. & CO.",
+  insuranceBrand: "Dr. H. & Co.",
+  headerIconSrc: "../../assets/imgs/Dr_H_Logo-01.png",
+  rightImageSrc: "../../assets/imgs/dr-h-and-co-dentistry-53.jpeg",
+  backgroundColor: "bg-black",
+  borderColor: "border-black",
+  textColor: "text-black",
+  reserveTextColor: "text-black",
+  focusRingColor: "focus:ring-black",
+  loader: "loaderDrHCo",
+  welcomeCenter: "",
+  welcomeCenters: [
+    "Hyde Street",
+    "Summit St",
+    "Marina",
+    "Dana",
+    "Emeryville",
+    "Martinez",
+    "San Ramon",
+    "Pill Hill",
+  ],
+  skipHomeOffices: [],
+  brandColor: "#000",
+};
+
+export const config = {
+  app: process.env.REACT_APP_BRAND === "thdc" ? thdc : drhco,
+  insChk: "ins-chk",
+  cardCheck: "crd-chk",
+  sentry: {
+    dsn: process.env.REACT_APP_SENTRY_DSN,
+    env: process.env.REACT_APP_SENTRY_ENV ?? "production",
+  },
+};

@@ -1,0 +1,12 @@
+{
+  "semi": false,
+  "endOfLine": "auto",
+  "overrides": [
+    {
+      "files": ["src/**/*.tsx"],
+      "options": {
+        "printWidth": 300
+      }
+    }
+  ]
+}

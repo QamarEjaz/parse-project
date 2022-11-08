@@ -1,0 +1,122 @@
+[
+  {
+    "id": 2,
+    "name": "English",
+    "value": "English"
+  },
+  {
+    "id": 3,
+    "name": "Spanish",
+    "value": "Spanish"
+  },
+  {
+    "id": 4,
+    "name": "Arabic",
+    "value": "Arabic"
+  },
+  {
+    "id": 5,
+    "name": "Armenian",
+    "value": "Armenian"
+  },
+  {
+    "id": 6,
+    "name": "Bengali",
+    "value": "Bengali"
+  },
+  {
+    "id": 7,
+    "name": "Bosnian",
+    "value": "Bosnian"
+  },
+  {
+    "id": 8,
+    "name": "Cambodian",
+    "value": "Cambodian"
+  },
+  {
+    "id": 9,
+    "name": "Chinese_Mandarin",
+    "value": "Chinese_Mandarin"
+  },
+  {
+    "id": 10,
+    "name": "Chinese_Cantonese",
+    "value": "Chinese_Cantonese"
+  },
+  {
+    "id": 11,
+    "name": "French",
+    "value": "French"
+  },
+  {
+    "id": 12,
+    "name": "German",
+    "value": "German"
+  },
+  {
+    "id": 13,
+    "name": "Greek",
+    "value": "Greek"
+  },
+  {
+    "id": 14,
+    "name": "Hebrew",
+    "value": "Hebrew"
+  },
+  {
+    "id": 15,
+    "name": "Hindi",
+    "value": "Hindi"
+  },
+  {
+    "id": 16,
+    "name": "Italian",
+    "value": "Italian"
+  },
+  {
+    "id": 17,
+    "name": "Japanese",
+    "value": "Japanese"
+  },
+  {
+    "id": 18,
+    "name": "Korean",
+    "value": "Korean"
+  },
+  {
+    "id": 19,
+    "name": "Laotian",
+    "value": "Laotian"
+  },
+  {
+    "id": 20,
+    "name": "Polish",
+    "value": "Polish"
+  },
+  {
+    "id": 21,
+    "name": "Portuguese",
+    "value": "Portuguese"
+  },
+  {
+    "id": 22,
+    "name": "Russian",
+    "value": "Russian"
+  },
+  {
+    "id": 23,
+    "name": "Somali",
+    "value": "Somali"
+  },
+  {
+    "id": 24,
+    "name": "Tagalog",
+    "value": "Tagalog"
+  },
+  {
+    "id": 25,
+    "name": "Vietnamese",
+    "value": "Vietnamese"
+  }
+]

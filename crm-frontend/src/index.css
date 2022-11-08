@@ -1,0 +1,451 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  background-color: #ffff !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+/* Use this inside main for full screen */
+
+.custom-h-screen {
+  height: calc(100vh - 4rem);
+}
+
+/* Agora Overrides */
+
+#local-stream div {
+  border-radius: 0.5rem;
+}
+
+/* FORM */
+
+.input-label {
+  @apply block text-xs font-normal dark:text-white text-gray-600;
+}
+
+/* AVATAR */
+
+.avatar-x-small {
+  @apply h-8 w-8 text-xs md:text-sm;
+}
+
+.avatar-appointment {
+  @apply h-9 w-9 text-sm;
+}
+
+.avatar-small {
+  @apply h-12 w-12 md:h-16 md:w-16 2xl:h-16 2xl:w-16 text-lg md:text-xl 2xl:text-2xl;
+}
+
+.avatar-user {
+  @apply h-12 w-12;
+}
+
+.avatar-medium {
+  @apply h-16 w-16 md:h-16 md:w-16 2xl:h-20 2xl:w-20 text-xl md:text-2xl 2xl:text-3xl;
+}
+
+.avatar-large {
+  @apply h-20 w-20 md:h-24 md:w-24 2xl:h-28 2xl:w-28 text-3xl md:text-4xl 2xl:text-5xl;
+}
+
+.avatar-x-large {
+  @apply h-28 w-28 md:h-32 md:w-32 2xl:h-40 2xl:w-40 text-5xl md:text-6xl 2xl:text-7xl;
+}
+
+/* Overlays */
+
+.overlay-dialog {
+  -webkit-backdrop-filter: blur(20px) !important;
+  /* Safari 9+ */
+  backdrop-filter: blur(20px) !important;
+  /* Chrome and Opera */
+  background-color: rgb(228 228 228 / 15%) !important;
+}
+
+.overlay-loader {
+  -webkit-backdrop-filter: blur(20px) !important;
+  /* Safari 9+ */
+  backdrop-filter: blur(20px) !important;
+  /* Chrome and Opera */
+  background-color: rgb(228 228 228 / 15%) !important;
+}
+
+.dark .overlay-dialog,
+.dark .overlay-loader {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.spinner-wrapper {
+  transform: scale(0.6);
+  height: calc(1em + 6px);
+  display: flex;
+  align-items: center;
+}
+
+/* Overlays */
+
+.overlay-dialog {
+  -webkit-backdrop-filter: blur(20px) !important;
+  /* Safari 9+ */
+  backdrop-filter: blur(20px) !important;
+  /* Chrome and Opera */
+  background-color: rgb(228 228 228 / 15%) !important;
+}
+
+.overlay-loader {
+  -webkit-backdrop-filter: blur(20px) !important;
+  /* Safari 9+ */
+  backdrop-filter: blur(20px) !important;
+  /* Chrome and Opera */
+  background-color: rgb(228 228 228 / 15%) !important;
+}
+
+.dark .overlay-dialog,
+.dark .overlay-loader {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.spinner-wrapper {
+  transform: scale(0.6);
+  height: calc(1em + 6px);
+  display: flex;
+  align-items: center;
+}
+
+/* SPINNER */
+
+.spinner-wrapper {
+  transform: scale(0.6);
+  height: calc(1em + 6px);
+  display: flex;
+  align-items: center;
+}
+
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  transform: translateX(2px);
+  -webkit-transform: translateX(2px);
+  -moz-transform: translateX(2px);
+  -ms-transform: translateX(2px);
+  -o-transform: translateX(2px);
+}
+
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.dark .lds-ellipsis div {
+  background-color: #fff;
+}
+
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
+/* BUTTON */
+
+.icon-btn {
+  @apply rounded-full transition flex items-center justify-center focus:outline-none;
+}
+
+.icon-btn:focus {
+  @apply outline-none;
+}
+
+.icon-btn-sm {
+  @apply w-6 h-6 p-0.5;
+}
+
+.icon-btn-md {
+  @apply w-7 h-7;
+}
+
+.icon-btn-lg {
+  @apply w-9 h-9 p-1;
+}
+
+.icon-btn-xl {
+  @apply w-11 h-11 p-1.5;
+}
+
+.icon-btn-2xl {
+  @apply p-2.5 sm:p-3 md:p-3 w-12 h-12 sm:w-14 sm:h-14;
+}
+
+.btn {
+  @apply inline-block relative transition duration-200 rounded-md font-medium text-center text-sm;
+}
+
+.btn:disabled {
+  @apply disabled:cursor-default disabled:opacity-50;
+}
+
+.btn:focus {
+  @apply dark:ring-offset-black-700 dark:ring-black-900 outline-none ring-2 ring-offset-2;
+}
+.btn-rounded {
+  @apply rounded-full;
+}
+.btn.noRing:focus {
+  @apply ring-0 ring-transparent ring-offset-0 !important;
+}
+
+.btn.btn-contained {
+  @apply dark:bg-black-900 shadow-sm text-white border border-transparent;
+}
+
+.btn.btn-outlined {
+  @apply dark:bg-transparent shadow-sm border dark:border-black-900;
+}
+
+.btn.btn-outlined,
+.btn.btn-contained {
+  @apply py-2 px-2.5 sm:py-2 sm:px-4;
+}
+
+/*** Colors ***/
+
+/* variant text */
+
+.btn.btn-text.btn-gray {
+  @apply text-gray-500 hover:text-gray-600 dark:text-white;
+}
+
+.btn.btn-text.btn-gray:focus {
+  @apply ring-gray-500 dark:ring-white;
+}
+
+.btn.btn-text.btn-red {
+  @apply text-red-600 hover:text-red-700;
+}
+
+.btn.btn-text.btn-red:focus {
+  @apply ring-red-600;
+}
+
+.btn.btn-text.btn-indigo {
+  @apply text-indigo-500 hover:text-indigo-600 dark:text-white;
+}
+
+.btn.btn-text.btn-indigo:focus {
+  @apply ring-indigo-500 dark:ring-white;
+}
+
+.btn.btn-text.btn-gray-light {
+  @apply text-gray-700;
+}
+
+.btn.btn-text.btn-gray-light:focus {
+  @apply ring-gray-200;
+}
+
+.btn.btn-text.btn-gray-dark {
+  @apply text-gray-700 hover:text-gray-700 dark:text-white;
+}
+
+.btn.btn-text.btn-gray-dark:focus {
+  @apply ring-gray-700 dark:ring-white;
+}
+
+/* variant contained */
+
+.btn.btn-contained.btn-indigo {
+  @apply bg-indigo-600 hover:bg-indigo-700;
+}
+
+.btn.btn-contained.btn-indigo:focus {
+  @apply ring-indigo-600;
+}
+
+.btn.btn-contained.btn-gray-dark {
+  @apply bg-gray-600 hover:bg-gray-700;
+}
+
+.btn.btn-contained.btn-gray-dark:focus {
+  @apply ring-gray-600;
+}
+
+.btn.btn-contained.btn-indigo-light {
+  @apply bg-indigo-500 hover:bg-indigo-600;
+}
+
+.btn.btn-contained.btn-indigo-light:focus {
+  @apply ring-indigo-500;
+}
+
+.btn.btn-contained.btn-gray-light {
+  @apply bg-gray-100 hover:bg-gray-200;
+}
+
+.btn.btn-contained.btn-gray-light:focus {
+  @apply ring-gray-200;
+}
+
+.btn.btn-contained.btn-red {
+  @apply bg-red-600 hover:bg-red-700;
+}
+
+.btn.btn-contained.btn-red:focus {
+  @apply ring-red-600;
+}
+
+.btn.btn-contained.btn-gray {
+  @apply bg-gray-500 hover:bg-gray-600;
+}
+
+.btn.btn-contained.btn-gray:focus {
+  @apply ring-gray-500;
+}
+
+/* variant outlined */
+
+.btn.btn-outlined.btn-indigo {
+  @apply text-indigo-600 border-indigo-700;
+}
+
+.btn.btn-outlined.btn-indigo:focus {
+  @apply ring-indigo-600;
+}
+
+.btn.btn-outlined.btn-indigo-light {
+  @apply text-indigo-500 border-indigo-600;
+}
+
+.btn.btn-outlined.btn-indigo-light:focus {
+  @apply ring-indigo-500;
+}
+
+.btn.btn-outlined.btn-red {
+  @apply text-red-600 border-red-600 focus:ring-red-600;
+}
+
+.btn.btn-outlined.btn-red:focus {
+  @apply ring-red-600;
+}
+
+.btn.btn-outlined.btn-gray {
+  @apply border-gray-300 text-gray-700 dark:text-white hover:bg-gray-50;
+}
+
+.btn.btn-outlined.btn-gray:focus {
+  @apply ring-gray-200;
+}
+
+/* dark state */
+
+.dark .btn.btn-text:hover {
+  @apply text-white;
+}
+
+.dark .btn.btn-contained {
+  @apply bg-black-900 hover:bg-black-900 !important;
+}
+
+.dark .btn.btn-outlined {
+  @apply border-black-900 text-white hover:bg-black-900 !important;
+}
+
+.dark .btn.btn-contained,
+.dark .btn.btn-outlined {
+  @apply ring-black-900 !important;
+}
+
+.automationHeight {
+  height: 560px;
+  overflow: scroll;
+}
+
+/* Patient Table */
+.patient-table-container {
+  width: 260px;
+}
+@media (min-width: 400px) {
+  .patient-table-container {
+    width: 300px;
+  }
+}
+@media (min-width: 500px) {
+  .patient-table-container {
+    width: 350px;
+  }
+}
+
+@media (min-width: 640px) {
+  .patient-table-container {
+    width: 400px;
+  }
+}
+@media (min-width: 768px) {
+  .main {
+    width: calc(100vw - 112px);
+  }
+  .patient-table-container {
+    width: auto;
+  }
+}
+
+.text-ellipsis-3lines {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}

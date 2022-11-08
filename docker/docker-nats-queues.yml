@@ -1,0 +1,23 @@
+version: '3.7'
+
+services:
+  nats-queues:
+    build: ../nats-queues/
+    container_name: nats-queues
+    ports:
+      - "5556:5556"
+    depends_on:
+      - nats1
+      - nats2
+      - nats3
+      - dr-h-co-api-server
+      - dr-h-co-postgres
+      - dr-h-co-ascend-streamapi
+    networks:
+      - nats
+    environment:
+      NATS: "${NATS}"
+
+networks:
+  nats-queues:
+    driver: bridge

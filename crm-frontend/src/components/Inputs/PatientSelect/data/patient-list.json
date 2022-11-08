@@ -1,0 +1,32 @@
+[
+  {
+    "id": 156340,
+    "firstName": "Zubair",
+    "lastName": "Niazi",
+    "dateOfBirth": "1998-02-23",
+    "patientStatus": "ACTIVE",
+    "emailAddress": "abc@test.com",
+    "profile_image": "",
+    "phone": "5108248754"
+  },
+  {
+    "id": 178063,
+    "firstName": "Zubair",
+    "lastName": "Niazi",
+    "dateOfBirth": "2005-01-19",
+    "patientStatus": "NEW",
+    "emailAddress": "zubair-test005@coral.global",
+    "profile_image": "",
+    "phone": "5108248754"
+  },
+  {
+    "id": 178551,
+    "firstName": "Zubair",
+    "lastName": "Niazi",
+    "dateOfBirth": "2005-01-01",
+    "patientStatus": "NEW",
+    "emailAddress": "zubair+test345@coral.global",
+    "profile_image": "",
+    "phone": "5108248754"
+  }
+]

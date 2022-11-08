@@ -1,0 +1,27 @@
+[
+  {
+    "id": 2,
+    "name": "NEW",
+    "value": "NEW"
+  },
+  {
+    "id": 3,
+    "name": "ACTIVE",
+    "value": "ACTIVE"
+  },
+  {
+    "id": 4,
+    "name": "NON-PATIENT",
+    "value": "NON-PATIENT"
+  },
+  {
+    "id": 5,
+    "name": "INACTIVE",
+    "value": "INACTIVE"
+  },
+  {
+    "id": 6,
+    "name": "DUPLICATE",
+    "value": "DUPLICATE"
+  }
+]

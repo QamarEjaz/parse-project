@@ -1,0 +1,322 @@
+[
+  {
+    "id": 2,
+    "name": "AA",
+    "value": "AA"
+  },
+  {
+    "id": 3,
+    "name": "AE",
+    "value": "AE"
+  },
+  {
+    "id": 4,
+    "name": "AP",
+    "value": "AP"
+  },
+  {
+    "id": 5,
+    "name": "AL",
+    "value": "AL"
+  },
+  {
+    "id": 6,
+    "name": "AK",
+    "value": "AK"
+  },
+  {
+    "id": 7,
+    "name": "AS",
+    "value": "AS"
+  },
+  {
+    "id": 8,
+    "name": "AZ",
+    "value": "AZ"
+  },
+  {
+    "id": 9,
+    "name": "AR",
+    "value": "AR"
+  },
+  {
+    "id": 10,
+    "name": "CA",
+    "value": "CA"
+  },
+  {
+    "id": 11,
+    "name": "CO",
+    "value": "CO"
+  },
+  {
+    "id": 12,
+    "name": "CNMI",
+    "value": "CNMI"
+  },
+  {
+    "id": 13,
+    "name": "CT",
+    "value": "CT"
+  },
+  {
+    "id": 14,
+    "name": "DE",
+    "value": "DE"
+  },
+  {
+    "id": 15,
+    "name": "DC",
+    "value": "DC"
+  },
+  {
+    "id": 16,
+    "name": "FM",
+    "value": "FM"
+  },
+  {
+    "id": 17,
+    "name": "FL",
+    "value": "FL"
+  },
+  {
+    "id": 18,
+    "name": "FSM",
+    "value": "FSM"
+  },
+  {
+    "id": 19,
+    "name": "GA",
+    "value": "GA"
+  },
+  {
+    "id": 20,
+    "name": "GU",
+    "value": "GU"
+  },
+  {
+    "id": 21,
+    "name": "HI",
+    "value": "HI"
+  },
+  {
+    "id": 22,
+    "name": "ID",
+    "value": "ID"
+  },
+  {
+    "id": 23,
+    "name": "IL",
+    "value": "IL"
+  },
+  {
+    "id": 24,
+    "name": "IN",
+    "value": "IN"
+  },
+  {
+    "id": 25,
+    "name": "IA",
+    "value": "IA"
+  },
+  {
+    "id": 26,
+    "name": "KS",
+    "value": "KS"
+  },
+  {
+    "id": 27,
+    "name": "KY",
+    "value": "KY"
+  },
+  {
+    "id": 28,
+    "name": "LA",
+    "value": "LA"
+  },
+  {
+    "id": 29,
+    "name": "ME",
+    "value": "ME"
+  },
+  {
+    "id": 30,
+    "name": "ME",
+    "value": "ME"
+  },
+  {
+    "id": 31,
+    "name": "MH",
+    "value": "MH"
+  },
+  {
+    "id": 32,
+    "name": "MA",
+    "value": "MA"
+  },
+  {
+    "id": 33,
+    "name": "MI",
+    "value": "MI"
+  },
+  {
+    "id": 34,
+    "name": "MN",
+    "value": "MN"
+  },
+  {
+    "id": 35,
+    "name": "MS",
+    "value": "MS"
+  },
+  {
+    "id": 36,
+    "name": "MO",
+    "value": "MO"
+  },
+  {
+    "id": 37,
+    "name": "MT",
+    "value": "MT"
+  },
+  {
+    "id": 38,
+    "name": "NE",
+    "value": "NE"
+  },
+  {
+    "id": 39,
+    "name": "NV",
+    "value": "NV"
+  },
+  {
+    "id": 40,
+    "name": "NH",
+    "value": "NH"
+  },
+  {
+    "id": 41,
+    "name": "NJ",
+    "value": "NJ"
+  },
+  {
+    "id": 42,
+    "name": "NM",
+    "value": "NM"
+  },
+  {
+    "id": 43,
+    "name": "NY",
+    "value": "NY"
+  },
+  {
+    "id": 44,
+    "name": "NC",
+    "value": "NC"
+  },
+  {
+    "id": 45,
+    "name": "ND",
+    "value": "ND"
+  },
+  {
+    "id": 46,
+    "name": "MP",
+    "value": "MP"
+  },
+  {
+    "id": 47,
+    "name": "OH",
+    "value": "OH"
+  },
+  {
+    "id": 48,
+    "name": "OK",
+    "value": "OK"
+  },
+  {
+    "id": 49,
+    "name": "OR",
+    "value": "OR"
+  },
+  {
+    "id": 50,
+    "name": "PW",
+    "value": "PW"
+  },
+  {
+    "id": 51,
+    "name": "PA",
+    "value": "PA"
+  },
+  {
+    "id": 52,
+    "name": "PR",
+    "value": "PR"
+  },
+  {
+    "id": 53,
+    "name": "RI",
+    "value": "RI"
+  },
+  {
+    "id": 54,
+    "name": "SC",
+    "value": "SC"
+  },
+  {
+    "id": 55,
+    "name": "SD",
+    "value": "SD"
+  },
+  {
+    "id": 56,
+    "name": "TN",
+    "value": "TN"
+  },
+  {
+    "id": 57,
+    "name": "TX",
+    "value": "TX"
+  },
+  {
+    "id": 58,
+    "name": "UT",
+    "value": "UT"
+  },
+  {
+    "id": 59,
+    "name": "VT",
+    "value": "VT"
+  },
+  {
+    "id": 60,
+    "name": "VI",
+    "value": "VI"
+  },
+  {
+    "id": 61,
+    "name": "VA",
+    "value": "VA"
+  },
+  {
+    "id": 62,
+    "name": "WA",
+    "value": "WA"
+  },
+  {
+    "id": 63,
+    "name": "WV",
+    "value": "WV"
+  },
+  {
+    "id": 64,
+    "name": "WI",
+    "value": "WI"
+  },
+  {
+    "id": 65,
+    "name": "WY",
+    "value": "WY"
+  }
+]

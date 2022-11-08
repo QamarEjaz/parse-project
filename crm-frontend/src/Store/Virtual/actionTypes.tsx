@@ -1,0 +1,7 @@
+export const GET_PATEINT_QUEUE = "get_patient_queue"
+export const GET_SINGLE_PATIENT_QUEUE = "get_single_patient_queue"
+export const GET_PATEINT_QUEUE_SUCCESS = "get_patient_queue_success"
+export const GET_SINGLE_PATIENT_QUEUE_SUCCESS = "get_single_patient_queue_success"
+export const SET_VIRTUAL_TABLE_SUBSCRIPTION = "set_virtual_table_subscription"
+export const SET_PEOPLE_TABLE_SUBSCRIPTION = "set_People_table_subscription"
+export const SET_APPOINTMENT_TABLE_SUBSCRIPTION = "set_appointment_table_subscription"

@@ -1,0 +1,301 @@
+@import url("https://cdn.syncfusion.com/ej2/tailwind.css");
+
+.overview-scheduler {
+  border: none !important;
+}
+#js-licensing {
+  display: none !important;
+  opacity: 0 !important;
+}
+.e-schedule {
+  border: none !important;
+}
+
+.dark .e-schedule {
+  background-color: #36393f !important;
+}
+
+.schedule-overview .overview-content {
+  border: none !important;
+}
+
+.e-schedule .e-appointment-details {
+  padding: 0 !important;
+  background-color: transparent;
+  overflow: visible !important;
+}
+
+.e-schedule .e-appointment {
+  overflow: visible !important;
+}
+
+.c-event-template {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  bottom: 2px;
+  right: 2px;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  transition: 0.2s all;
+  -webkit-transition: 0.2s all;
+  -moz-transition: 0.2s all;
+  -ms-transition: 0.2s all;
+  -o-transition: 0.2s all;
+  border-radius: 10px !important;
+  -webkit-border-radius: 10px !important;
+  -moz-border-radius: 10px !important;
+  -ms-border-radius: 10px !important;
+  -o-border-radius: 10px !important;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.e-schedule .e-appointment .e-icons {
+  display: none !important;
+}
+
+.e-schedule .e-vertical-view .e-day-wrapper .c-event-template:hover,
+.e-schedule .e-vertical-view .e-day-wrapper .c-event-template:active {
+  cursor: pointer;
+}
+
+.e-date-header-container {
+  border-bottom: 1px solid #e5e7eb;
+  /* padding: 0 26px 0 0 !important; */
+  /* padding: 0 !important; */
+}
+
+.dark .e-date-header-container {
+  border-color: #222 !important;
+}
+
+.e-schedule .e-vertical-view .e-day-wrapper .e-appointment {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.e-tooltip-wrap.e-schedule-event-tooltip {
+  padding: 0 !important;
+  border: none !important;
+  background-color: transparent !important;
+  transform: translate(-10px, -10px) !important;
+  -webkit-transform: translate(-10px, -10px) !important;
+  -moz-transform: translate(-10px, -10px) !important;
+  -ms-transform: translate(-10px, -10px) !important;
+  -o-transform: translate(-10px, -10px) !important;
+}
+
+/* .e-schedule .e-vertical-view .e-day-wrapper .e-appointment:hover,
+.e-schedule .e-vertical-view .e-day-wrapper .e-appointment:active {
+  box-shadow: 0 3px 12px rgb(0 0 0 / 20%) !important;
+  transform: translateY(-4px) !important;
+  -webkit-transform: translateY(-4px) !important;
+  -moz-transform: translateY(-4px) !important;
+  -ms-transform: translateY(-4px) !important;
+  -o-transform: translateY(-4px) !important;
+  cursor: pointer;
+} */
+.e-schedule .e-vertical-view .e-day-wrapper .e-appointment:focus {
+  box-shadow: none !important;
+}
+
+.e-schedule .e-vertical-view .e-date-header-wrap table col,
+.e-schedule .e-vertical-view .e-content-wrap table col {
+  width: 195px !important;
+}
+
+.e-schedule .e-vertical-view .e-date-header-wrap.e-all-day-auto {
+  border: none !important;
+}
+
+.e-schedule .e-vertical-view .e-time-cells-wrap table td,
+.e-schedule .e-vertical-view .e-work-cells {
+  height: 35px !important;
+}
+
+.dark .e-schedule .e-vertical-view .e-work-cells {
+  background-color: #202225 !important;
+  border-color: #2d2e35 !important;
+}
+
+.dark .e-schedule .e-vertical-view .e-work-hours {
+  background-color: #2f3136 !important;
+  border-color: #202225 !important;
+}
+
+.dark .e-schedule .e-vertical-view .e-work-cells:hover {
+  background-color: #2c2e33 !important;
+}
+
+.e-schedule .e-vertical-view .e-work-cells {
+  background-color: #f1f3f4 !important;
+}
+
+.e-schedule .e-vertical-view .e-work-hours {
+  background-color: #fff !important;
+}
+
+.e-schedule .e-vertical-view .e-work-cells,
+.e-schedule .e-vertical-view .e-work-hours {
+  border-color: #dadce0;
+}
+
+.e-schedule .e-vertical-view .e-work-cells:hover {
+  background-color: #e8eaed !important;
+}
+
+.e-schedule .e-vertical-view .e-day-wrapper .e-appointment {
+  border: none !important;
+  position: relative;
+  /* width: 100% !important; */
+}
+
+.simple-calendar .react-calendar {
+  width: 100% !important;
+}
+
+.simple-calendar .react-calendar__tile {
+  font-size: 11px !important;
+}
+
+.e-resource-cells {
+  border: 1px solid #e5e7eb;
+  border-top: none !important;
+  border-bottom: none !important;
+  padding: 4px !important;
+  padding-left: 15px !important;
+}
+
+.dark .e-resource-cells {
+  background-color: #36393f !important;
+  border-color: #222 !important;
+}
+
+.dark .e-resource-cells:nth-child(1) {
+  border-color: #222 !important;
+}
+
+.e-resource-cells {
+  border: 1px solid #e5e7eb;
+  border-top: none !important;
+  border-bottom: none !important;
+  padding: 4px !important;
+  padding-left: 15px !important;
+}
+
+.e-time-slots {
+  background: transparent !important;
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+.dark .e-time-slots {
+  border-color: #222 !important;
+}
+
+.e-resource-cells:nth-child(1) {
+  border-left: 1px solid #e5e7eb !important;
+}
+
+.e-resource-cells .e-text-ellipsis {
+  font-size: 20px !important;
+  font-weight: 600;
+}
+
+.e-header-row {
+  transform: translateY(24px);
+  -webkit-transform: translateY(24px);
+  -moz-transform: translateY(24px);
+  -ms-transform: translateY(24px);
+  -o-transform: translateY(24px);
+}
+
+.e-all-day-row {
+  display: none !important;
+}
+
+.e-content-wrap {
+  border-top: 1px solid #e5e7eb;
+  border-right: 1px solid #e5e7eb;
+  transform: translateY(-1px);
+  -webkit-transform: translateY(-1px);
+  -moz-transform: translateY(-1px);
+  -ms-transform: translateY(-1px);
+  -o-transform: translateY(-1px);
+}
+
+.e-header-row .e-current-day,
+.e-header-row:nth-child(2) .e-header-cells {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.e-schedule-table .e-left-indent .e-resource-cells.e-disable-dates,
+.e-schedule-table .e-left-indent .e-header-cells.e-disable-dates {
+  border: none !important;
+}
+
+.e-left-indent .e-left-indent-wrap .e-schedule-table {
+  opacity: 0 !important;
+}
+
+.e-schedule .e-left-indent {
+  width: 58px !important;
+}
+
+.e-schedule .e-time-slots {
+  /* font-size: 14px !important; */
+  color: #000 !important;
+  font-weight: 500 !important;
+  text-align: right !important;
+  /* padding-right: 12px !important; */
+}
+
+.e-schedule .e-time-slots .major-time-slot {
+  font-size: 14px !important;
+  color: #000 !important;
+  font-weight: 500 !important;
+  text-align: right !important;
+  padding-right: 12px !important;
+  /* text-black-1000 text-sm font-medium transform -translate-y-0.5 text-right pr-3 dark:text-gray-200 */
+}
+
+.e-current-timeline {
+  border-top: 1px solid #374151 !important;
+}
+
+.e-current-time {
+  color: #1f2937 !important;
+}
+
+.e-schedule .e-time-slots .minor-time-slot {
+  font-size: 12px !important;
+  color: #9ca3af !important;
+  text-align: right !important;
+  padding-right: 12px !important;
+  /* text-gray-400 text-xs transform -translate-y-0.5 text-right pr-3 dark:text-gray-400 */
+}
+
+.dark .e-schedule .e-time-slots .major-time-slot {
+  color: #fff !important;
+}
+
+.dark .e-schedule .e-time-slots .minor-time-slot {
+  color: #d8d8d8 !important;
+}
+
+.e-appointment {
+  position: absolute !important;
+}
+
+.responsive-scheduler .e-schedule.e-device .e-vertical-view .e-time-cells-wrap {
+  width: 58px !important;
+}
+
+.responsive-scheduler .e-content-wrap {
+  height: 5040px !important;
+  overflow-y: hidden !important;
+}
+.e-schedule .e-spinner-pane {
+  display: none !important;
+}

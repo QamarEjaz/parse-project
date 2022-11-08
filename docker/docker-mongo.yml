@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+  dr-h-co-mongo:
+    image : mongo:latest
+    container_name: dr-h-co-mongo
+    environment:
+      - PUID=1000
+      - PGID=1000
+    networks:
+      - dr-h-co-mongo
+    ports:
+      - 27017:27017
+    restart: unless-stopped
+    volumes:
+      - "./data:/data/db"
+
+networks:
+  dr-h-co-mongo:
+    driver: bridge

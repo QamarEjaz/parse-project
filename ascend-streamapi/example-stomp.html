@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Ascend Stream API Stomp Example</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">    
+    <link rel="stylesheet" href="libs/jsonview.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.min.js"></script>    
+    <script src="libs/jsonview.js"></script>
+
+    <!-- This stomp client works fairly well for browsers -->
+    <script src="https://cdn.jsdelivr.net/npm/@stomp/stompjs@6.0.0/bundles/stomp.umd.min.js"></script>
+
+    <style>
+      .message {
+        margin-top: 15px;
+      }
+
+      .message-header {
+        display: flex; 
+        justify-content: space-between;
+      }
+
+      .message-item {
+        margin-right: 15px;
+      }
+    </style>
+  </head>
+
+  <script>    
+    // Important stuff starts in the connect function - top code is unimportant formatting for html
+
+    function onloaded(){
+      // Just tired of typing these in each time
+      if(localStorage.getItem('client_id')){
+        document.getElementById('client_id').value = localStorage.getItem('client_id');
+      }
+
+      if(localStorage.getItem('client_secret')){
+        document.getElementById('client_secret').value = localStorage.getItem('client_secret');
+      }
+    }
+
+    const randomString = () => {
+      return Math.random().toString().substring(3, 10);
+    };
+
+    function appendConnectedMessage(){
+      const template = `
+        <div class="message">
+          <div class="message-header"> 
+            Connected succesfully to the stream api
+          </div>
+        </div>
+      `;
+
+      const fragment = document.createRange().createContextualFragment(template);
+      document.getElementById('streamApiMessages').append(fragment);
+    }
+
+    let messageCount = 0;
+
+    function appendOrganizationsMessage(organizations){      
+      const treeId = `orgs_${messageCount++}_tree`;
+      const template = `
+        <div class="message">
+          <div class="message-header"> 
+            <span class="message-item">Available Organizations - you will receive messages for creates, updates and deletes for these orgs.</span>
+          </div>
+          <div id="${treeId}"</div>
+        </div>
+      `;
+
+      const fragment = document.createRange().createContextualFragment(template);
+      document.getElementById('streamApiMessages').append(fragment);
+            
+      jsonView.format(organizations, `#${treeId}`);
+      // I don't like seeing the tree expanded by default
+      document.getElementById(treeId).children[0].children[0].click(); 
+    }
+
+    function appendStreamAPIMessage(message){
+      // Pull out the routing key from the stomp mesage
+      const destination = message.headers.destination;
+      const [organizationId, locationId, domainType, operation] = destination.substring(destination.lastIndexOf('/')+1).split('.');
+      // Some fields like operation and domainType are also found in the payload as well as the stomp destination routing key
+
+      const bodyAsJSON = JSON.parse(message.body);
+      // Interesting fields in the bodyAsJSON could include applicationId, clientName, correlationId, operation, sendTime
+
+      // create a new dom element for the message
+      const messageId = `message_${messageCount++}`;
+      const treeId = `${messageId}_tree`;
+      const sendDate = new Date(bodyAsJSON.sendTime);
+      const sendAmPm = sendDate.getHours() > 11 ? 'pm' : 'am';
+      const sendHour = sendDate.getHours() > 12 ? sendDate.getHours() - 12 : sendDate.getHours() === 0 ? 12 : sendDate.getHours();      
+      const sendTimeString = `${sendHour}:${sendDate.getMinutes()} ${sendAmPm}`;
+
+      const template = `
+        <div class="message">
+          <div class="message-header"> 
+            <span class="message-item">Organization: ${getOrganizationIdentifier(organizationId)}</span>
+            <span class="message-item">Location: ${locationId}</span>
+            <span class="message-item">Author: ${bodyAsJSON.clientName}</span>
+            <span class="message-item">Domain: ${domainType}</span>
+            <span class="message-item">Operation: ${operation}</span>
+            <span class="message-item">Time: ${(sendTimeString)}</span>
+          </div>
+          <div id="${treeId}"</div>
+        </div>
+      `;
+
+      const fragment = document.createRange().createContextualFragment(template);
+      document.getElementById('streamApiMessages').append(fragment);
+            
+      jsonView.format(bodyAsJSON.payload, `#${treeId}`);
+      // I don't like seeing the tree expanded by default
+      document.getElementById(treeId).children[0].children[0].click();      
+    }
+
+    function clearMessages(){
+      document.getElementById('streamApiMessages').innerHTML = '';
+    }
+
+    let availableOrganizations;
+
+    // This is just a convenience to see what orgs you have available to your client_id
+    const fetchAvailableOrganizations = async () => {
+      try {
+        const client_id = document.getElementById('client_id').value;
+        const client_secret = document.getElementById('client_secret').value;
+        const { data } = await axios.get(`available-organizations?client_id=${client_id}&client_secret=${client_secret}`);
+
+        availableOrganizations = data;
+        console.log('Available organizations', data);
+        appendOrganizationsMessage(data);
+      }
+      catch(err){
+        console.error('Error fetching the linked organizations available to your client_id', err);
+      }
+    }
+
+    function getOrganizationIdentifier(organizationId){
+      if(availableOrganizations && availableOrganizations[organizationId]){
+        return availableOrganizations[organizationId]['name'] || organizationId;
+      }
+
+      return organizationId;
+    }
+
+
+
+    const connect = async () => {      
+      const client_id = document.getElementById('client_id').value;
+      const client_secret = document.getElementById('client_secret').value;
+
+      if(!client_id || !client_secret){
+        alert('Please make sure to set your client_id and client_secret before trying to connect.');
+        return;
+      }
+
+      // store what the user entered just for convenience - I get tired of typing the values each time
+      localStorage.setItem('client_id', client_id);
+      localStorage.setItem('client_secret', client_secret);
+
+      try {        
+        // Get the stomp login information from the Ascend API.
+        // Normally you would never expose the client_id and client_secret to a browser.
+        // Normally, the client_id and client_secret will be stored securely on your backend and you will request
+        // a stomp connection without that data ever being access in a browser.
+
+        const { data: stompConfig } = await axios.get(`stomp-creds?client_id=${client_id}&client_secret=${client_secret}`);
+
+        console.log('Stomp config', stompConfig);
+        // user is JWT that has all of the credentials / information accessible to your client_id.  You can use jwt.io to inspect it.
+        // url is the secure wss stomp url
+        // virtual-host is the rabbit vhost you need to connect to
+        // queues - the rabbitmq queues you have access to
+        // exchanges - the rabbitmq exchanges you have access to
+        // routingKeys - the rabbitmq routing keys you have access to for bindings between exchanges and queues
+
+        // Now connect to the stream api.  Set up a client connection and then activate it below        
+        const client = new StompJs.Client({
+            brokerURL: stompConfig.url,
+            connectHeaders: {
+                login: stompConfig.user,
+                host: stompConfig['virtual-host']
+            },
+            heartbeatIncoming: 10000,
+            heartbeatOutgoing: 10000
+        });
+
+        // In Chrome, you can monitor the activity of the stomp connection in the debugger > Network > WS > Messages tab
+        client.onConnect = () => {
+          appendConnectedMessage();
+          // Now that you are connected, create an queue to listen to            
+          // In a browser, it's smart to always attach a random id to the end of a queue because we normally only use exclusive, auto-delete
+          // queues in browsers.  If you didn't have a random number, and you refreshed the browser, you could not reattach to the queue
+          // queues should be globally unique (per your client_id)            
+          const queueName = `${stompConfig.queues}.testqueue-${randomString()}`;
+          
+          const stompMessageHandler = (stompMessage) => {              
+            appendStreamAPIMessage(stompMessage);
+          };
+
+          // durable: means that messages are persisted to disk in case of a rabbit failure
+          // autoDelete: the queue will be deleted when the browser is closed 
+          // exclusive: only this active browser's thread can access the queueu
+          const stompOptions = {'x-queue-name': queueName, durable: false, autoDelete: true, exclusive: true};
+
+          // Routing keys in the ascend stream api follow a pattern of *.*.*.*
+          // OrgId.LocationId.DomainType.Operation
+          client.subscribe(`/exchange/${stompConfig.exchanges}/*.*.AppointmentV1.*`, stompMessageHandler, stompOptions);
+          client.subscribe(`/exchange/${stompConfig.exchanges}/*.*.PatientV1.*`, stompMessageHandler, stompOptions);
+
+          // In this example, you will only see AppointmentV1 and PatientV1 flow through the queue for all orgs and locations your
+          // client_id has access to.  Normally, you want to explicitly choose what kind of data you want to listen to or
+          // you will see every single domain model flow which can be very wasteful
+
+          // Let's see what organizations are available to your client_id
+          fetchAvailableOrganizations();
+        };
+        
+        client.onStompError = (err) => {
+            console.error(err);
+            alert('Error in the stream api.  Check console for details.');
+        };              
+
+        client.activate();
+      }
+      catch(err){
+        console.error(err);
+        alert('Error in the example.  Check the browser console for more details.')        
+      }
+    }
+    
+  </script>
+
+
+  <body style="font-family: Roboto;" onload="onloaded()">
+
+    <div style="margin:25px;">       
+      <div class="field is-horizontal" style="margin-top: 20px;">
+        <div class="field-label is-normal">
+          <label class="label">client_id</label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <p class="control">
+              <input class="input is-primary" id="client_id" type="text" placeholder="Enter your client_id">
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label">client_secret</label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <p class="control">
+              <input class="input is-primary" id="client_secret" type="text" placeholder="Enter your client_secret">
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <p class="control">
+              <button class="button is-primary" onclick="connect()">Connect to the Stream API With Stomp</button>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex"> 
+
+        <div id="streamAPIOutput" style="margin-left: 10px; margin-right:10px;">
+          <div style="font-weight: 700;">Stream API Messages: <a onclick="clearMessages(); return false;">clear</a></div>
+          <div id="streamApiMessages">            
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+</body>
+
+</html>
+
